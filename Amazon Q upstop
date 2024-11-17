@@ -1,0 +1,34 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+string removeString(string &s, const string &u) {
+    while (s.find(u) != string::npos) {
+        s.erase(s.find(u), u.length());
+    }
+    return s;
+}
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
+      string s, u;
+    cin >> s >> u;
+    cout << removeString(s, u) << endl;
+    return 0;
+}
+
+/*
+
+Testcase InputTestcase Input
+daabcbaabcbc
+abc
+daabcbaabcbc
+abc
+Testcase OutputTestcase Output
+dab
+dab
+*/
