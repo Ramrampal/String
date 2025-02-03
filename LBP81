@@ -1,0 +1,66 @@
+LBP81
+Problem
+Submissions
+Leaderboard
+Discussions
+Write a program to print even length words in a string?
+
+Input Format
+
+a string from the user
+
+Constraints
+
+no
+
+Output Format
+
+list of strings with even length
+
+Sample Input 0
+
+hello world java
+Sample Output 0
+
+java
+Sample Input 1
+
+python is very easy
+Sample Output 1
+
+python is very easy
+
+
+
+
+
+
+
+
+
+#include <iostream>
+#include <sstream>
+#include <vector>
+using namespace std;
+
+int main() {
+    string input;
+    getline(cin, input);  
+
+    stringstream ss(input);
+    string word;
+    vector<string> even_length_words;
+
+    while (ss >> word) {
+        if (word.length() % 2 == 0) {  // Check if the length of the word is even
+            even_length_words.push_back(word);
+        }
+    }
+
+    // Print the even length words
+    for (const string& word : even_length_words) {
+        cout << word << " ";
+    }
+
+    return 0;
+}
